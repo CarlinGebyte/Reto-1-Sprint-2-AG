@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reto-1-s2/static/css/main.708848da.css",
+    "main.js": "/reto-1-s2/static/js/main.ed501b96.js",
+    "index.html": "/reto-1-s2/index.html",
+    "main.708848da.css.map": "/reto-1-s2/static/css/main.708848da.css.map",
+    "main.ed501b96.js.map": "/reto-1-s2/static/js/main.ed501b96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.708848da.css",
+    "static/js/main.ed501b96.js"
+  ]
+}
