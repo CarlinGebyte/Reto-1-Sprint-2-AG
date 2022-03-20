@@ -5,29 +5,50 @@ import {
   CardFirst,
   CardImg,
   CardText,
+  Company,
+  CompanyImg,
+  Featured,
+  JobName,
+  Li,
+  New,
+  Tag,
   TagContainer,
+  Ul,
 } from "../assets/styles/CardStyles";
 import { Jobs } from "../data/Jobs";
+import Search from "./Search";
 
 export default class Card extends Component {
   render() {
     const DivContent = styled.main`
-      padding: 3% 7%;
+      padding: 2em 10%;
+      background-color: hsl(180, 52%, 96%);
+      @media (max-width: 340px) {
+        padding: 2em 5%;
+      }
     `;
 
     return (
       <DivContent>
+        <Search></Search>
         {Jobs.map((job) => {
           return (
-            <CardDiv key={job.id}>
+            <CardDiv
+              key={job.id}
+              style={
+                job.featured
+                  ? { borderLeft: "6px solid hsl(180, 29%, 50%)" }
+                  : { borderLeft: "none" }
+              }
+            >
               <CardFirst>
                 <CardImg>
-                  <img src="" alt="logo-company"></img>
+                  <CompanyImg src={job.img} alt="logo-company"></CompanyImg>
                 </CardImg>
                 <CardText>
-                  <p>
+                  <Company>
                     {job.company}
-                    <span
+                    <New
                       style={
                         job.new
                           ? { display: "inline-block" }
@@ -35,8 +56,8 @@ export default class Card extends Component {
                       }
                     >
                       NEW!
-                    </span>
-                    <span
+                    </New>
+                    <Featured
                       style={
                         job.featured
                           ? { display: "inline-block" }
@@ -44,19 +65,19 @@ export default class Card extends Component {
                       }
                     >
                       FEATURED
-                    </span>
-                  </p>
-                  <p>{job.name}</p>
-                  <p>
-                    <span>{job.created}</span>
-                    <span>{job.type}</span>
-                    <span>{job.Location}</span>
-                  </p>
+                    </Featured>
+                  </Company>
+                  <JobName>{job.name}</JobName>
+                  <Ul>
+                    <Li>{job.created}</Li>
+                    <Li>{job.type}</Li>
+                    <Li>{job.Location}</Li>
+                  </Ul>
                 </CardText>
               </CardFirst>
               <TagContainer>
                 {job.tags.map((tag) => {
-                  return <div key={tag}>{tag}</div>;
+                  return <Tag key={tag}>{tag}</Tag>;
                 })}
               </TagContainer>
             </CardDiv>
