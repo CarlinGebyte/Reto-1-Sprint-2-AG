@@ -16,7 +16,6 @@ import {
   Ul,
 } from "../assets/styles/CardStyles";
 import { Jobs } from "../data/Jobs";
-import Search from "./Search";
 
 export default class Card extends Component {
   render() {
@@ -30,7 +29,6 @@ export default class Card extends Component {
 
     return (
       <DivContent>
-        <Search></Search>
         {Jobs.map((job) => {
           return (
             <CardDiv

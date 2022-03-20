@@ -20,6 +20,9 @@ export const CompanyImg = styled.img`
 export const CardDiv = styled.div`
   &:first-child {
     margin-top: 0;
+    @media (max-width: 950px) {
+      margin-top: 2em;
+    }
   }
   &:last-child {
     margin-bottom: 0;
